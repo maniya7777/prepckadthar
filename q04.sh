@@ -34,23 +34,23 @@ cat <<EOF > /ckad/daring-moccasin/broker-deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-name: broker-deployment
-namespace: quetzal
+  name: broker-deployment
+  namespace: quetzal
 spec:
-replicas: 1
-selector:
-matchLabels:
-app: broker
-template:
-metadata:
-labels:
-app: broker
-spec:
-containers:
-- name: broker
-image: nginx
-ports:
-- containerPort: 80
+  replicas: 1
+  selector:
+    matchLabels:
+      app: broker
+  template:
+    metadata:
+      labels:
+        app: broker
+    spec:
+      containers:
+      - name: broker
+        image: nginx
+        ports:
+        - containerPort: 80
 EOF
 
 echo ""
