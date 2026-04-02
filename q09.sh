@@ -20,8 +20,13 @@ kubectl get ns traefik >/dev/null 2>&1 || \
 kubectl create ns traefik
 
 echo "Installing Traefik ingress controller..."
-kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.12/docs/content/reference/dynamic-configuration/k8s-crd.yaml
-kubectl apply -f https://raw.githubusercontent.com/traefik/traefik/v2.12/docs/content/reference/dynamic-configuration/k8s-rbac.yaml
+# Add Traefik repo
+helm repo add traefik https://traefik.github.io/charts
+helm repo update
+
+# Install Traefik in namespace 'traefik'
+kubectl create ns traefik 2>/dev/null
+helm install traefik traefik/traefik --namespace traefik
 
 echo "Traefik ingress installed."
 
