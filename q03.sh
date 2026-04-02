@@ -25,6 +25,7 @@ kubectl create namespace ckad00017
 kubectl create deployment ckad00017-deployment \
   --image=nginx \
   --replicas=1 \
+  --port=81 \
   -n ckad00017
 
 echo ""
