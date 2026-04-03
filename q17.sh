@@ -20,7 +20,7 @@ EOF
 
 kubectl create namespace goshawk
 
-# Create current deployment manifest
+# Create deployment manifest
 
 cat <<EOF > /ckad/goshawk/current-chipmunk-deployment.yaml
 apiVersion: apps/v1
@@ -77,6 +77,6 @@ echo ""
 echo "Environment setup completed."
 echo "Deployment manifest location: /ckad/goshawk/current-chipmunk-deployment.yaml"
 echo ""
-echo "Expected outputs:"
-echo "current-chipmunk-deployment -> hello-world"
-echo "canary-chipmunk-deployment  -> new hello world"
+echo "Test service:"
+echo "curl <NODE-IP>:30007"
+echo "Expected output: hello-world"
