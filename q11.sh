@@ -22,12 +22,8 @@ mkdir -p /ckad/DF
 # Create Dockerfile
 cat <<EOF > /ckad/DF/Dockerfile
 FROM centos:8
-
 LABEL maintainer="ckad-lab"
-
-RUN yum -y install httpd && yum clean all
-
-CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
+CMD ["/bin/bash"]
 EOF
 
 echo "Dockerfile created at /ckad/DF/Dockerfile"
