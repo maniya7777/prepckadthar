@@ -25,9 +25,7 @@ FROM centos:8
 
 LABEL maintainer="ckad-lab"
 
-RUN yum -y update && \
-    yum -y install httpd && \
-    yum clean all
+RUN yum -y install httpd && yum clean all
 
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
 EOF
