@@ -4,6 +4,16 @@ echo "----------------------------------------"
 echo "Setting up CKAD Scenario"
 echo "----------------------------------------"
 
+#!/bin/bash
+
+cat <<'EOF'
+
+Fix any API deprecation issues in the manifest file /ckad/credible-mite/www.yaml so the application can be deployed on the K8s cluster.
+(Note: The application was developed for Kubernetes v1.15, while the cluster runs Kubernetes v1.31.)
+Deploy the application specified in the updated manifest file /ckad/credible-mite/www.yaml in the garfish namespace.
+
+EOF
+
 # Create namespace
 kubectl create namespace garfish
 
